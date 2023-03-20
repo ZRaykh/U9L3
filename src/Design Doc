@@ -1,9 +1,13 @@
 Parent class: LVMBase
-    - two private String variables: name and UUID
+    - one private String variable: name
+    - private UUID object: u
     - one private double variable: size
-    - one public void method: generateUUID
+    - One constructor with a String parameter name and double size
+        - sets private var name to name and private dbl size to size
+        - Calls generateUUID
+    - one private void method: generateUUID
         - 0 parameters
-        - sets UUID to the generated UUID
+        - sets u to the generated UUID
     - getter methods for each variable
     - setter method updateSize
         - one double parameter for new size
@@ -11,16 +15,13 @@ Parent class: LVMBase
 Subclass: SD
     - One constructor with a String parameter name and double parameter size
         - creates a new SD object and sends parameters to super class
-        - calls generateUUID method
 Subclass: PV
     - One constructor with a String parameter name and double parameter size
         - creates a new PV object and sends parameters to super class
-        - calls generateUUID method
 Subclass: VG
     - private arrayList PVs
     - One constructor with a String parameter name and object PV parameter
         - creates a new VG object and sends name to super class
-        - calls generateUUID method
         - adds PV to arraylist
     -  One void method addPV
         - One object parameter for PV
@@ -29,5 +30,4 @@ Subclass: VG
 Subclass: LV
     - One constructor with a String parameter name and double parameter size
             - creates a new PV object and sends parameters to super class
-            - calls generateUUID method
 Runnerclass: LVM
