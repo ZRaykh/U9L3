@@ -26,7 +26,7 @@ Subclass: VG
     -  One void method addPV
         - One object parameter for PV
         - Adds PV to PVs list
-        - Updates size of
+        - Updates size of VG
 Subclass: LV
     - One constructor with a String parameter name and double parameter size
             - creates a new PV object and sends parameters to super class
