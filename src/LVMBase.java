@@ -3,13 +3,11 @@ import java.util.UUID;
 public class LVMBase {
     private String name;
     private UUID u;
-    private double size;
 
-    public LVMBase(String n, double s)
+    public LVMBase(String n)
     {
         generateUUID();
         name = n;
-        size = s;
     }
 
     private void generateUUID()
@@ -21,15 +19,8 @@ public class LVMBase {
         return name;
     }
 
-    public UUID getU() {
+    public UUID getUUID() {
         return u;
     }
 
-    public double getSize() {
-        return size;
-    }
-
-    public void updateSize(double size) {
-        this.size = size;
-    }
 }
