@@ -75,8 +75,24 @@ public class LVMManager {
         return false;
     }
 
-    public boolean createSD(String pvName, String sdName)
+    public boolean inPValready(String sdName)
     {
-
+        for (SD sd : currentSDS)
+        {
+            if (sd.getName().equals(sdName) && sd.isInPV())
+            {
+                return true;
+            }
+        }
+        return false;
     }
+
+    public void createPV(String pvName, String sdName)
+    {
+        int i = currentSDS.indexOf(sdName);
+        PV pv = new PV(pvName, currentSDS.get(i).getSize());
+        currentPVs.add(pv);
+    }
+
+    //VG methods
 }
