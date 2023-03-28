@@ -13,7 +13,10 @@ public class SD extends LVMBase
     {
         return size;
     }
-
+    public String SDData()
+    {
+        return super.getName() + " [" + size +"] [" + super.getUUID() +"]";
+    }
     public boolean isInPV()
     {
         return inPV;
@@ -23,4 +26,6 @@ public class SD extends LVMBase
     {
         inPV = true;
     }
+
+
 }

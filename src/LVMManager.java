@@ -27,6 +27,7 @@ public class LVMManager {
         return currentLVs;
     }
 
+    //SD methods
     public boolean createSD(String name, double size)
     {
         for (SD sd: currentSDS)
@@ -37,5 +38,45 @@ public class LVMManager {
         SD sd = new SD(name,size);
         currentSDS.add(sd);
         return true;
+    }
+
+    public ArrayList<String> installedSDs()
+    {
+        ArrayList<String> installed = new ArrayList<String>();
+        for (SD sd: currentSDS)
+        {
+            installed.add(sd.SDData());
+        }
+        return installedSDs();
+    }
+
+    //PV methods
+    public boolean existingPV(String pvName)
+    {
+        for (PV pv: currentPVs)
+        {
+            if (pv.getName().equals(pvName))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean existingSD(String sdName)
+    {
+        for (SD sd : currentSDS)
+        {
+            if (sd.getName().equals(sdName))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean createSD(String pvName, String sdName)
+    {
+
     }
 }
